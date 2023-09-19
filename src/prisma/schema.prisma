@@ -1,0 +1,18 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Blog {
+  id       Int      @id @default(autoincrement())
+  title String
+  content String
+  author String
+}
